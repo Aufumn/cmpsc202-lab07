@@ -1,6 +1,6 @@
 # Lab 07: The Integer-Valued Knapsack Problem
 
-**Name:** _______________________  
+**Name:** Autumn 
 
 ## Introduction
 In this lab, you will explore different variations of the Knapsack problem and design a dynamic programming solution for one of them. You may work in small groups or individually, but everyone should write up their own answers to the questions below. 
@@ -17,7 +17,10 @@ Suppose we're going hiking. We have items $1, \ldots, n$ that we could pack in m
 
 **Question:** Which of the three problem variations can be solved using the dynamic programming approaches we've studied in lecture? Explain your reasoning.
 
-*Your Answer:*
+*Your Answer:* All of these problems can be solved by dynamic programming approaches.
+1. This is the 0/1 Knapsack problem. Each item can be selected at most once. Dynamic programming can solve it by considering whether to include or exclude each item.
+2. This is the Integer-Valued Knapsack problem. Items can be selected multiple times. Dynamic programming can solve it by considering each item and the remaining capacity
+3. This is the minimum-weight Knapsack problem. Dynamic programming can solve it by finding the minimum weight needed to reach a required value.
 
 ## Part 2: The Naive Recursive Algorithm
 
@@ -40,7 +43,9 @@ Function MaxValue(W):
 
 **Question:** Which of the three problem variations (1, 2, or 3) does this algorithm solve? How do you know? Explain your reasoning.
 
-*Your Answer:*
+*Your Answer:* The algorithim solves 2 variations either maximize the value to capacity and one where you can pack a positive integer of items.
+
+The algorithm allows an item to be selected multiple times because it calls MaxValue(W - w_i) after selecting an item. It does not keep track of which items have already been selected, so the same item can be chosen again. It maximizes the total value while keeping the weight within the capacity.
 
 ## Part 3: Recursion Tree
 
